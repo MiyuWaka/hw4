@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 #問題2　
+#未完成。やたらステップ数が長くなってしまう
 
 def __logging(visited, rest=[]):
     print("visited:%s\n   rest:%s\n" % (visited, rest))
@@ -57,6 +58,8 @@ if __name__ == '__main__':
     LinksLinesData = read_link("wikipedia_links/links.txt")   #links.txtを1行ずつリストに出力
     NicknameLinesData = read_name("wikipedia_links/pages.txt")  #nickname.txtから番号と名前の対応を辞書にして出力
     graph = createGraph(LinksLinesData)                  #linkリストからグラフを出力
-    StartNumber,EndNumber = DecisionStartEnd(NicknameLinesData,"リンゴ","タマネギ") #jacobとkentがそれぞれ何番かみる
+    StartNumber,EndNumber = DecisionStartEnd(NicknameLinesData,"Google","渋谷") #それぞれ何番かみる
     Route = bfs(graph,StartNumber,EndNumber)   #経路をBFSで見つける
-    print("jacobから自分まで %d ステップです" %len(Route))
+
+    print("ルートは %s です" %Route)  #どういう経路を辿ってきたのかがわかる
+    print("リンゴからタマネギまで %d ステップです" %len(Route))
