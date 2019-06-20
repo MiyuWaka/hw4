@@ -54,8 +54,8 @@ def DecisionStartEnd(CorrespondenceTable,Startname,Endname):
     return StartNumber,EndNumber
 
 if __name__ == '__main__':
-    LinksLinesData = read_link(".gitignore/links.txt")   #links.txtを1行ずつリストに出力
-    NicknameLinesData = read_name(".gitignore/nicknames.txt")  #nickname.txtから番号と名前の対応を辞書にして出力
+    LinksLinesData = read_link("links.txt")   #links.txtを1行ずつリストに出力
+    NicknameLinesData = read_name("nicknames.txt")  #nickname.txtから番号と名前の対応を辞書にして出力
     graph = createGraph(LinksLinesData)                  #linkリストからグラフを出力
     StartNumber,EndNumber = DecisionStartEnd(NicknameLinesData,"jacob","kent") #jacobとkentがそれぞれ何番かみる
     Route = bfs(graph,StartNumber,EndNumber)   #経路をBFSで見つける
